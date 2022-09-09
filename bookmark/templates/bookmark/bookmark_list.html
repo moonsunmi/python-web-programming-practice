@@ -1,0 +1,19 @@
+<!-- Book 테이블로부터 모든 레코드를 가져와 object_list라는 컨텍스트 변수를 구성한다. -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Django Bookmark List</title>
+</head>
+
+<body>
+    <h1>Bookmark List</h1>
+    <div id="content">
+    <ul>
+        {% for bookmark in object_list %}
+        <li><a href="{% url 'detail' bookmark.id %}">{{ bookmark }}</a></li>
+        {% endfor %}
+    </ul>
+    </div>
+</body>
+</html>
+
