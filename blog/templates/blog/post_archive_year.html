@@ -1,3 +1,9 @@
+{% extends 'base.html' %}
+
+{% block title %}post_archive_year.html{% endblock %}
+
+{% block content %}
+
 <h1>Post Archives for {{ year|date:"Y" }}</h1>
 
 <ul>
@@ -11,8 +17,10 @@
 <div>
   <ul>
     {% for object in object_list %}
-      <li>{{ object.modify_dt|date:"Y-m-d" }}&nbsp;&nbsp;&nbsp;
+      <li class="h5">{{ object.modify_dt|date:"Y-m-d" }}&emsp;
         <a href="{{ object.get_absolute_url }}"><strong>{{ object.title }}</strong></a></li>
     {% endfor %}
   </ul>
 </div>
+
+{% endblock %}
